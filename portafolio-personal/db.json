@@ -1,0 +1,68 @@
+{
+  "perfil": {
+    "id": 1,
+    "nombre": "Nicolás Correa",
+    "titulo": "Estudiante de Desarrollo de Software",
+    "descripcion": "Soy estudiante de Desarrollo de Software en la Pontificia Universidad Católica del Ecuador. Actualmente curso el tercer semestre de la carrera y estoy interesado en iniciar mis prácticas preprofesionales."
+  },
+
+  "educacion": [
+    {
+      "id": 1,
+      "institucion": "Pontificia Universidad Católica del Ecuador (PUCE)",
+      "detalle": "Tecnología en Desarrollo de Software — Tercer semestre"
+    },
+    {
+      "id": 2,
+      "institucion": "Unidad Educativa Particular “Séneca”",
+      "detalle": "Bachillerato Internacional"
+    }
+  ],
+
+  "habilidades": [
+    { "id": 1, "nombre": "Python" },
+    { "id": 2, "nombre": "HTML" },
+    { "id": 3, "nombre": "CSS" },
+    { "id": 4, "nombre": "JavaScript" },
+    { "id": 5, "nombre": "React" },
+    { "id": 6, "nombre": "Django" },
+    { "id": 7, "nombre": "PostgreSQL" },
+    { "id": 8, "nombre": "GitHub" },
+    { "id": 9, "nombre": "Axios" },
+    { "id": 10, "nombre": "JSON Server" }
+  ],
+
+  "idiomas": [
+  { "id": 1, "nombre": "Español — Nativo" },
+  { "id": 2, "nombre": "Inglés — Avanzado" }
+  ],
+
+  "referencias": [
+    {
+      "nombre": "Diego Gallo",
+      "cargo": "Jefe de Aplicaciones ERP",
+      "telefono": "0999842505"
+    },
+    {
+      "nombre": "Roberto Proaño",
+      "cargo": "Gerente",
+      "telefono": "0996469596"
+    }
+  ],
+
+  "posts": [
+    {
+      "id": 1,
+      "title": "Cómo construir una lista de tareas con React y JSON Server",
+      "date": "2025-04-10",
+      "content": "En este tutorial aprenderás a construir una aplicación CRUD completa utilizando React y JSON Server.\n\n1. Crear el proyecto\nPrimero creamos el proyecto con Vite:\n\nnpm create vite@latest todo-app\ncd todo-app\nnpm install\n\nLuego instalamos Axios y React Router:\n\nnpm install axios react-router-dom\n\n2. Configurar JSON Server\nCreamos un archivo db.json con una colección llamada tasks:\n\n{\n  \"tasks\": [\n    { \"id\": 1, \"title\": \"Aprender React\", \"completed\": false }\n  ]\n}\n\nLevantamos el backend:\n\nnpx json-server --watch db.json --port 3000\n\n3. Conectar React con el backend usando Axios\nCreamos una instancia de Axios:\n\nimport axios from \"axios\";\n\nconst api = axios.create({\n  baseURL: \"http://localhost:3000\"\n});\n\nexport default api;\n\n4. Leer tareas (GET)\nUsamos useEffect para obtener las tareas:\n\nuseEffect(() => {\n  api.get(\"/tasks\").then(res => setTasks(res.data));\n}, []);\n\n5. Crear tareas (POST)\n\napi.post(\"/tasks\", { title: nuevaTarea, completed: false });\n\n6. Actualizar tareas (PUT)\n\napi.put(`/tasks/${id}`, { completed: true });\n\n7. Eliminar tareas (DELETE)\n\napi.delete(`/tasks/${id}`);\n\n8. Uso de React Router\nPermite separar vistas como lista de tareas y detalle.\n\nConclusión\nReact junto con JSON Server permite construir aplicaciones CRUD completas de forma rápida y sencilla, ideales para proyectos académicos y prototipos."
+    },
+
+    {
+      "id": 2,
+      "title": "Análisis de la propuesta 'Temporal' en TC39",
+      "date": "2025-04-12",
+      "content": "La propuesta Temporal es una iniciativa del comité TC39 que busca mejorar el manejo de fechas y horas en JavaScript.\n\nProblema que resuelve\nActualmente JavaScript utiliza el objeto Date, el cual presenta varios problemas: mutabilidad, manejo inconsistente de zonas horarias y poca claridad en su uso.\n\n¿En qué consiste Temporal?\nTemporal introduce nuevos objetos como:\n- Temporal.PlainDate\n- Temporal.PlainTime\n- Temporal.ZonedDateTime\n\nEstos objetos son inmutables y más precisos.\n\nEjemplo:\n\nconst date = Temporal.PlainDate.from('2025-04-10');\n\nEsto crea una fecha clara y sin ambigüedades.\n\nEstado de la propuesta\nTemporal se encuentra en Stage 3, lo que significa que está cerca de convertirse en parte oficial del estándar ECMAScript.\n\nImportancia para el futuro de JavaScript\nFacilita el desarrollo de aplicaciones globales, reduce errores y mejora la legibilidad del código.\n\nOpinión crítica\nLa propuesta es muy positiva y soluciona problemas históricos. El único riesgo es la curva de aprendizaje inicial, pero los beneficios superan ampliamente esta desventaja.\n\nConclusión\nTemporal representa un avance significativo para JavaScript moderno y es una herramienta que todo desarrollador debería conocer."
+    }
+  ]
+}

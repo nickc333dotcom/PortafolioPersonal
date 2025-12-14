@@ -1,0 +1,135 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* THEMES */
+body.light {
+  background: #f4f6f8;
+  color: #1f2937;
+}
+
+body.dark {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* NAVBAR */
+.navbar {
+  background: linear-gradient(90deg, #111827, #1f2937);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.nav-links a {
+  margin-right: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.theme-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* LAYOUT */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* CARDS */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+body.dark .card {
+  background: rgba(30, 41, 59, 0.95);
+  color: #e5e7eb;
+}
+
+.card.hover:hover {
+  transform: translateY(-6px);
+}
+
+.subtitle {
+  color: gray;
+  margin-top: 0.5rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+/* ANIMATION */
+.fade-in {
+  animation: fade 0.6s ease-in;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* TAGS / HABILIDADES */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.tag {
+  background: #e5e7eb;
+  color: #111827;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  background: #d1d5db;
+}
+
+/* Dark mode tags */
+body.dark .tag {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+body.dark .tag:hover {
+  background: #475569;
+}
